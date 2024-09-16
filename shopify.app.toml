@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "e0b375d7099cc62ee68641790fb8241e"
+name = "follow-up-for-review-app"
+handle = "follow-up-for-review-app"
+application_url = "https://track-respected-highs-components.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "ztabs-dev-store.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products,write_customers,write_draft_orders,read_orders,read_customers,read_products,read_orders"
+
+[auth]
+redirect_urls = [
+  "https://track-respected-highs-components.trycloudflare.com/auth/callback",
+  "https://track-respected-highs-components.trycloudflare.com/auth/shopify/callback",
+  "https://track-respected-highs-components.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false

@@ -1,0 +1,28 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "9197baa655105dd5166068d6ffa72b56"
+name = "follow-it"
+handle = "follow-it"
+application_url = "https://biotechnology-personality-ugly-entity.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "ztabs-dev-store.myshopify.com"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://biotechnology-personality-ugly-entity.trycloudflare.com/auth/callback",
+  "https://biotechnology-personality-ugly-entity.trycloudflare.com/auth/shopify/callback",
+  "https://biotechnology-personality-ugly-entity.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+[pos]
+embedded = false
