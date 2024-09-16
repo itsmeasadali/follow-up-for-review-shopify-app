@@ -4,5 +4,6 @@
       "path": "/api/send-review-emails?secret=${CRON_SECRET}",
       "schedule": "0 0 * * *"
     }
-  ]
+  ],
+  "buildCommand": "npm run vercel-build"
 }

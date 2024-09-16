@@ -13,8 +13,7 @@ database.sqlite
 .env
 .env.*
 
-
-
-
-
 /extensions/*/dist
+
+.next
+prisma/client
