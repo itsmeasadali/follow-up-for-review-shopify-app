@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, lazy, Suspense } from "react";
 import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { useActionData, useLoaderData, useSubmit } from "@remix-run/react";
@@ -21,7 +21,6 @@ import { TitleBar } from "@shopify/app-bridge-react";
 import { authenticate } from "../shopify.server";
 import prisma from "../db.server";
 import { ClientOnly } from "remix-utils/client-only";
-import { lazy, Suspense } from "react";
 import "react-quill/dist/quill.snow.css";
 import type { ReactQuillProps } from 'react-quill';
 
@@ -190,8 +189,8 @@ export default function Index() {
   const reviewListingsRows = reviewListings.map((listing) => [
     listing.platform,
     listing.url,
-    <Button onClick={() => setEditingListing(listing)}>Edit</Button>,
-    <Button tone="critical" onClick={() => {
+    <Button key={listing.id} onClick={() => setEditingListing(listing)}>Edit</Button>,
+    <Button key={listing.id} tone="critical" onClick={() => {
       setDeletingListingId(listing.id);
       setIsDeleteModalOpen(true);
     }}>Delete</Button>
@@ -256,7 +255,7 @@ export default function Index() {
         <BlockStack gap="200">
           <Text as="h4" variant="headingMd">Available Merge Tags:</Text>
           {mergeTags.map((tag) => (
-            <Text as="p" key={tag.value}>{tag.label}: {tag.value}</Text>
+            <Text key={tag.value} as="p">{tag.label}: {tag.value}</Text>
           ))}
         </BlockStack>
         <Button onClick={() => handleSubmit("saveSettings")}>Save Settings</Button>
