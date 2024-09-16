@@ -1,10 +1,8 @@
 import { json } from "@remix-run/node";
 import type { LoaderFunctionArgs } from "@remix-run/node";
-import { shopifyApi, LATEST_API_VERSION } from "@shopify/shopify-api";
-import shopifyConfig from "../shopify.server";
+import { shopifyApi, LATEST_API_VERSION, Session } from "@shopify/shopify-api";
 import { processEmailTemplate, sendEmail } from "../utils/email.server";
 import prisma from "../db.server";
-import { Session } from "@shopify/shopify-api";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
   try {
@@ -19,7 +17,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     // Fetch all shops with enabled review emails
     const shops = await prisma.reviewEmailSetting.findMany({
       where: { enabled: true },
-      select: { shopId: true, daysToWait: true, emailTemplate: true },
+      select: { shopId: true, daysToWait: true, emailTemplate: true, subjectLine: true },
     });
 
     const results = [];
