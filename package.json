@@ -41,7 +41,8 @@
     "react-dom": "^18.2.0",
     "react-quill": "^2.0.0",
     "remix-utils": "^7.6.0",
-    "vite-tsconfig-paths": "^5.0.1"
+    "vite-tsconfig-paths": "^5.0.1",
+    "@vercel/remix": "^2.7.1"
   },
   "devDependencies": {
     "@remix-run/eslint-config": "^2.7.1",
