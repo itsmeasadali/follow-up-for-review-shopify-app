@@ -5,5 +5,12 @@
       "schedule": "0 0 * * *"
     }
   ],
-  "buildCommand": "npm run vercel-build"
+  "buildCommand": "npm run vercel-build",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node",
+      "config": { "nodeVersion": "18.x" }
+    }
+  ]
 }
