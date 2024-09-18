@@ -3,7 +3,7 @@
 client_id = "9a37848d5e96c25c6cedd4e304fd8f92"
 name = "follow-up-for-review"
 handle = "follow-up-for-review"
-application_url = "https://tri-stunning-jewish-leisure.trycloudflare.com"
+application_url = "https://proper-indonesian-candles-case.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "read_orders"
 
 [auth]
 redirect_urls = [
-  "https://tri-stunning-jewish-leisure.trycloudflare.com/auth/callback",
-  "https://tri-stunning-jewish-leisure.trycloudflare.com/auth/shopify/callback",
-  "https://tri-stunning-jewish-leisure.trycloudflare.com/api/auth/callback"
+  "https://proper-indonesian-candles-case.trycloudflare.com/auth/callback",
+  "https://proper-indonesian-candles-case.trycloudflare.com/auth/shopify/callback",
+  "https://proper-indonesian-candles-case.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
